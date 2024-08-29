@@ -1,6 +1,7 @@
 # MeetUp
 
 MeetUp app Using nextjs and React Js and mongodb
+PWA feature also Implimented
 
 ## Link
 
