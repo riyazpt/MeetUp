@@ -17,12 +17,13 @@ function HomePage(props) {
 }
 export async function getStaticProps() {
   const client = await MongoClient.connect(
-    "mongodb+srv://Ubaid:@cluster0.m6skkby.mongodb.net/meetup?retryWrites=true&w=majority"
+    process.env.MONGODB_URI
   );
   const db = client.db();
   const meetUpCollection = db.collection("meetup");
+
   const meetups = await meetUpCollection.find().toArray();
-  console.log(meetups);
+
 
   client.close();
 
